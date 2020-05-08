@@ -12,13 +12,12 @@ public class TorpedoStore {
   // rate of failing to fire torpedos [0.0, 1.0]
   private double FAILURE_RATE = 0.0; //NOSONAR
 
-  Random generator;
+  static Random generator=new Random();
 
   private int torpedoCount = 0;
 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
-    generator=new Random();
 
     // update failure rate if it was specified in an environment variable
     String failureEnv = System.getenv("IVT_RATE");
